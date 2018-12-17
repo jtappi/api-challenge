@@ -29,7 +29,8 @@ describe('Calling the Review API ', () => {
 		assert.equal(response.status, '500', `The response.status [${response.status}] does not match the expected 500 status`);        
 	});
 	it('should return a review with a rating', async () => {
-		const response = await apiCall.getResponse(`${url}/6`);        
+		const reviewId = Math.floor(Math.random() * 9) + 1;
+		const response = await apiCall.getResponse(`${url}/${reviewId}`);       
 		assert.isNotNull(response.results.rating, 'response.results.rating did not return a rating');
 	});    
 	it('should return a review with a userId', async () => {

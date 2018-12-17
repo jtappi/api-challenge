@@ -31,7 +31,8 @@ const seedReviews = () => db.Promise.map([
 	{rating: 3, review_text: 'can be better',product_id:4},
 	{rating: 3, review_text: 'should be better',product_id:6, user_id:3},
 	{rating: 4, review_text: 'good price',product_id:7, user_id:1},
-	{rating: 4, review_text: 'just like description',product_id:7, user_id:1}
+	{rating: 4, review_text: 'just like description',product_id:7, user_id:1},
+	{rating: 0, review_text: 'JT says hi!', product_id: null, user_id: 2}
 ], review => db.model('reviews').create(review));
 
 
