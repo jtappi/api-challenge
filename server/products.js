@@ -1,31 +1,40 @@
-const db = require('../db') //this is required
+const db = require('../db'); //this is required
 const Product = require('../db/models/product');
 const Review = require('../db/models/review');
 
-const router = require('express').Router()
+const router = require('express').Router();
 
 router.get('/', function(req, res, next) {
-    Product.findAll({
-            include: [Review]
-        })
-        .then(result => {
-            res.status(500).send(result);
-        })
-        .catch(next);
+	Product.findAll({
+		include: [Review]
+	})
+		.then(result => {
+			if (!result) {
+				res.status(204).send(result);
+			} else if (result) {
+				res.status(200).send(result);
+			} else {
+				res.status(500).send(result);
+			}
+		})
+		.catch(next);
 });
 
 router.get('/:id', function(req, res, next) {
-    Product.findOne({
-            where:{id:req.params.id},
-            include: [Review]
-        })
-        .then(result => {
-            if (!result) {
-                var errRes = new Error('Record not found!');
-                return next(errRes)
-            }
-            res.status(200).send(result);
-        })
+	Product.findOne({
+		where:{id:req.params.id},
+		include: [Review]
+	})
+		.then(result => {
+			if (!result) {
+				res.status(204).send(result);
+			} else if (result) {
+				res.status(200).send(result);
+			} else {
+				res.status(500).send(result);
+			}
+		})
+		.catch(next);
 });
 
-module.exports = router
+module.exports = router;

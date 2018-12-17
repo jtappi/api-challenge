@@ -1,6 +1,6 @@
 'use strict';
 
-const Product = require('./product')
+const Product = require('./product');
 const User = require('./user');
 const Review = require('./review');
 

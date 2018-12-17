@@ -1,30 +1,30 @@
-'use strict'
+'use strict';
 
 const Sequelize = require('sequelize');
 const db = require('../index.js');
 
 const Product = db.define('products', {
-  title: {
+	title: {
   	type: Sequelize.STRING,
   	allowNull: false
-  },
-  category: Sequelize.ARRAY(Sequelize.STRING),
-  current_price: {
+	},
+	category: Sequelize.ARRAY(Sequelize.STRING),
+	current_price: {
   	type: Sequelize.DOUBLE,
   	allowNull: false
-  },
-  description: {
+	},
+	description: {
   	type: Sequelize.TEXT,
   	allowNull: false
-  },
-  availability: {
+	},
+	availability: {
   	type: Sequelize.BOOLEAN,
   	allowNull: false
-  },
-  inventory: {
+	},
+	inventory: {
   	type: Sequelize.INTEGER,
   	allowNull: false
-  }
+	}
 
 });
 

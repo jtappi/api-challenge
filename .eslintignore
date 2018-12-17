@@ -1,0 +1,13 @@
+// Directories
+node_modules
+mochawesome-report
+
+// File patterns
+**/*.json
+**/*.md
+**/*.log
+**/*.xml
+**/*.hbs
+**/*.txt
+
+// Specific files
