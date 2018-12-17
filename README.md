@@ -11,14 +11,19 @@ Install Postgres:
 
 Install all packages: 
 `yarn`
+
 Create PostgresDB Locally: 
 `createdb api-challenge`
+
 Seed DB: 
 `npm run seed`
+
 Run App: 
 `npm run start`
+
 Run API Tests:
 `npm run apiTests`
+
 View Results in Reporter:
 `open mochawesome-report/mochawesome.html`
 
