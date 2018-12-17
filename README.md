@@ -8,6 +8,7 @@
 
 Install Postgres: 
 `brew install postgresql`
+
 Install all packages: 
 `yarn`
 Create PostgresDB Locally: 
